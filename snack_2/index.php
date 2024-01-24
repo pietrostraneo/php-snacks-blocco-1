@@ -4,9 +4,8 @@
         $name = $_GET['name'];
         $age = $_GET['age'];
         $mail = $_GET['mail'];
-    }
+    };
 
-    if(str_word_count())
 ?>
 
 
@@ -21,7 +20,7 @@
 <body>
     
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-3">
             <div class="col-6 text-center text-danger">
                 <h1>Log-in Form</h1>
             </div>

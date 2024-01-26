@@ -38,7 +38,7 @@ $posts = [
             'text' => 'Testo post 6'
         ]
     ]
-    
+
 ]
 
 ?>
@@ -53,6 +53,23 @@ $posts = [
     <title>Snack 3</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <?php foreach($posts as $postDate => $allpost) { ?>
+                    <ul class="my-4">
+                        <li>
+                            <h4><?php echo $postDate ?></h4>
+                            <?php foreach($allpost as $post) { ?>
+                                <b><?php echo $post['title'] ?></b>
+                                <p><?php echo $post['author'] ?></p>
+                                <p><?php echo $post['text'] ?></p>
+                            <?php } ?>
+                        </li>
+                    </ul>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

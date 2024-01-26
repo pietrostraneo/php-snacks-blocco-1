@@ -1,10 +1,25 @@
 <?php
 
+    // Controllo che le variabili esistono e che non siano stringhe vuote
     if(isset($_GET['name']) && isset($_GET['age']) && isset($_GET['mail'])){
-        $name = $_GET['name'];
-        $age = $_GET['age'];
-        $mail = $_GET['mail'];
-    };
+        if($_GET['name'] != '' && $_GET['age'] != '' && $_GET['mail'] != ''){
+            
+            // Assegno le variabili GET
+            $name = $_GET['name'];
+            $age = $_GET['age'];
+            $mail = $_GET['mail'];
+            
+
+            // Effettuo dei controlli sulle variabili che contengono i dati del form
+            if(strlen($name) > 3 && filter_var($mail, FILTER_VALIDATE_EMAIL) && is_numeric($age)){
+                echo 'Accesso riuscito';
+            }
+            else{
+                echo 'Accesso negato';
+            }
+
+        }
+    }
 
 ?>
 
